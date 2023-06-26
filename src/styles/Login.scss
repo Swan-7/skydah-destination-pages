@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;800&display=swap');
+
+$white-color: #ffffff;
+$grey-color: #433C3C;
+$border: #C4C4C4;
+$primary-color: #2C0085;
+
+.Login {
+    font-family: 'Manrope', sans-serif;
+    width: 26.5rem;
+    height: max-content;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border-radius: 0.5rem;
+    flex-direction: column;
+    padding: 2.3rem;
+    padding-bottom: 3.3rem;
+    position: relative;
+    background-color: $white-color;
+    margin-top: .8rem;
+
+    .header {
+
+        h2 {
+            font-size: 1.8rem;
+            padding-bottom: .8rem;
+        }
+
+        h5 {
+            font-weight: 600;
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+        margin-top: 3.2rem;
+        font-size: 0.8rem;
+
+        input {
+            border: 1px solid $border;
+            border-radius: 0.5rem;
+            padding: 0.6rem;
+            width: 20rem;
+
+            &:hover {
+                border: 1.4px solid $primary-color;
+            }
+
+            &::placeholder {
+                font-size: 0.7rem;
+            }
+        }
+
+        .btn {
+            margin-top: 1.55rem;
+        }
+
+        p {
+            font-size: .6rem;
+        }
+
+        .password-toggle {
+            position: relative;
+          }
+          
+          .toggle-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+          }
+          
+          .hide .toggle-icon {
+            background-image: url('../assets/eye-slash.png'); 
+          }
+          
+          .show .toggle-icon {
+            background-image: url('../assets/eye.png');
+          }
+          
+
+        .content-section {
+            display: flex;
+            justify-content: space-between;
+
+            .checkbox {
+                display: flex;
+                align-items: center;
+
+                label {
+                    display: flex;
+                    align-items: center;
+                    margin-right: 1rem;
+                    font-size: .7rem;
+                    position: relative;
+                }
+
+                input {
+                    margin-right: .3rem;
+                    width: 1rem;
+                    appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+
+                    &:checked {
+                        background-color: $primary-color;
+                    }
+
+                    &:checked::before {
+                        content: '\1F5F8';
+                        display: block;
+                        position: absolute;
+                        transform: translate(-50%, -50%);
+                        color: white;
+                        font-size: 12px;
+                    }
+
+                    &:hover {
+                        border: 1px solid $primary-color;
+                    }
+                }
+            }
+
+            .forgot-password {
+                text-align: left;
+            }
+        }
+
+        a {
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+}
+
+.error-toast {
+    background-color: $white-color;
+    width: 18rem;
+    height: 6rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    font-size: 14px;
+    font-weight: 600;
+    color: red;
+    border: 1px solid red;
+    background-image: none;
+    z-index: 9999;
+}
+
+.custom-toast {
+    background-color: $white-color;
+    width: 18rem;
+    height: 6rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    font-size: 14px;
+    font-weight: 600;
+    color: #3ED7A0;
+    background-image: none;
+    z-index: 9999;
+    text-align: left;
+}
+
+.Toastify__toast-container {
+    position: absolute !important;
+    top: 5.7rem !important;
+    right: 4rem !important;
+    z-index: 9999 !important;
+
+    .Toastify__toast {
+        border-radius: 0.8rem;
+
+        .Toastify__toast-body {
+            line-height: 1.7;
+
+            .Toastify__toast-icon {
+                display: none;
+            }
+        }
+
+        .Toastify__close-button {
+            display: none;
+        }
+    }
+}
